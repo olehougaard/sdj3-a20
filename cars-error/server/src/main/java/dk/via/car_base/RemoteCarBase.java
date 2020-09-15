@@ -14,7 +14,7 @@ public class RemoteCarBase extends UnicastRemoteObject implements CarBase {
 	private LinkedList<RemoteCar> cars = new LinkedList<>();
 
 	@Override
-	public Car registerCar(String model, int year, Money price) {
+	public Car registerCar(String model, int year, Money price) throws RemoteException {
 		RemoteCar car = new RemoteCar(model, year, price);
 		cars.add(car);
 		return car;
