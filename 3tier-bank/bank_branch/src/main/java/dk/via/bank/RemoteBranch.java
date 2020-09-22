@@ -87,8 +87,10 @@ public class RemoteBranch extends UnicastRemoteObject implements Branch, Transac
 		Account account = transaction.getAccount();
 		Money amount = transaction.getAmount();
 		amount = translateToSettledCurrency(amount, account);
-		account.withdraw(amount);
-		accountDAO.update(account);
+		if (amount.getAmount().doubleValue() <= account.getBalance().getAmount().doubleValue()) {
+			account.withdraw(amount);
+			accountDAO.update(account);
+		}
 	}
 	
 	@Override
