@@ -30,8 +30,7 @@ public class CarsImpl {
     @PayloadRoot(namespace = WebServiceConfig.NAMESPACE_URI, localPart = "DeleteRequest")
     @ResponsePayload
     public DeleteResponse delete(@RequestPayload DeleteRequest request) {
-        DeleteResponse response = new DeleteResponse();
         dao.delete(request.getLicenseNumber());
-        return response;
+        return new DeleteResponse();
     }
 }
