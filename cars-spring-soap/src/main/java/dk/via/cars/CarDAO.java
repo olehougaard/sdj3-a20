@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CarDAO {
-	private DatabaseHelper<CarDTO> helper;
+	private final DatabaseHelper<CarDTO> helper;
 
 	public CarDAO() {
 		helper = new DatabaseHelper<>("jdbc:postgresql://localhost:5432/postgres?currentSchema=car_base", "postgres", "password");
