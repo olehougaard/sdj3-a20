@@ -12,7 +12,7 @@ import javax.xml.ws.Service;
 
 public class RunBranch {
 	public static void main(String[] args) throws Exception {
-		HeadQuarters hq = new HQClient();
+		HeadQuarters hq = new HQClient("http://localhost:8080/");
 		RemoteBranch branch = new RemoteBranch(1234, hq);
 		Endpoint.publish("http://localhost:8090/branch", branch);
 	}

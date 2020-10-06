@@ -22,6 +22,15 @@ public class ObjectFactory {
         return car;
     }
 
+    public static CreateRequest createCreateRequest(String licenseNo, String model, int year, MoneyDTO price) {
+        CreateRequest car = new CreateRequest();
+        car.setLicenseNumber(licenseNo);
+        car.setModel(model);
+        car.setYear(year);
+        car.setPrice(price);
+        return car;
+    }
+
     public static CreateResponse createCreateResponse(CarDTO car) {
         dk.via.web_service.ObjectFactory fac = new dk.via.web_service.ObjectFactory();
         fac.createCarDTO();

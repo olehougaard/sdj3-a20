@@ -1,6 +1,7 @@
 package dk.via.web_service;
 
-import dk.via.cars.CarDAO;
+import dk.via.cars.ws.Cars;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -8,7 +9,12 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
 public class CarsImpl {
-    private final CarDAO dao = new CarDAO();
+    private final Cars dao;
+
+    @Autowired
+    public CarsImpl(Cars dao) {
+        this.dao = dao;
+    }
 
     @PayloadRoot(namespace = WebServiceConfig.NAMESPACE_URI, localPart = "CreateRequest")
     @ResponsePayload

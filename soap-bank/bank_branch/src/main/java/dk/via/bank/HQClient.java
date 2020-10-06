@@ -18,10 +18,6 @@ public class HQClient implements HeadQuarters {
         this.baseURL = baseURL;
     }
 
-    public HQClient() {
-        this("http://localhost:8080/");
-    }
-
     private<T> T createServiceClient(String path, String serviceName, Class<T> targetClass) {
         try {
             URL wsdl = new URL(baseURL + path + "?wsdl");
