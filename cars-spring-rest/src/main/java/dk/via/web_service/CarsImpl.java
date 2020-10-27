@@ -1,5 +1,6 @@
 package dk.via.web_service;
 
+import dk.via.cars.CarDTO;
 import dk.via.cars.ws.Cars;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,7 @@ public class CarsImpl {
     }
 
     @DeleteMapping(value = "/{license}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("license") String license_number) {
         dao.delete(license_number);
     }

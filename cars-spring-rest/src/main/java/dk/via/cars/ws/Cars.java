@@ -1,7 +1,8 @@
 package dk.via.cars.ws;
 
-import dk.via.web_service.CarDTO;
-import dk.via.web_service.MoneyDTO;
+
+import dk.via.cars.CarDTO;
+import dk.via.cars.MoneyDTO;
 
 import java.util.List;
 

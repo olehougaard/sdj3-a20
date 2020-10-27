@@ -3,8 +3,6 @@ package dk.via.cars;
 import dk.via.cars.ws.Cars;
 import dk.via.db.DataMapper;
 import dk.via.db.DatabaseHelper;
-import dk.via.web_service.CarDTO;
-import dk.via.web_service.MoneyDTO;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;

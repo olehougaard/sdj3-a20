@@ -1,8 +1,6 @@
 package dk.via.cars;
 
 import dk.via.cars.ws.Cars;
-import dk.via.web_service.CarDTO;
-import dk.via.web_service.MoneyDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,7 @@ public class CarsStub implements Cars {
 
     @Override
     public List<CarDTO> readAll() {
-        return new ArrayList<CarDTO>(cars);
+        return new ArrayList<>(cars);
     }
 
     @Override

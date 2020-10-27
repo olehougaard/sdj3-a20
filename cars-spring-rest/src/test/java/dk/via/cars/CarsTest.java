@@ -1,6 +1,5 @@
 package dk.via.cars;
 
-import dk.via.web_service.CarDTO;
 import dk.via.web_service.CarsImpl;
 import org.junit.Before;
 import org.junit.Test;
